@@ -25,9 +25,13 @@ export const buildDockerImage = async ({
     console.log('Docker container built.');
     core.endGroup();
     return true;
-  } catch (err) {
+  } catch (err: unknown) {
     core.endGroup();
-    core.setFailed(`Building container failed.\nError: ${err.message}`);
+    if (err instanceof Error) {
+      core.setFailed(`Building container failed.\nError: ${err.message}`);
+    } else {
+      core.setFailed(`Building container failed.\nError: ${String(err)}`);
+    }
     return false;
   }
 };

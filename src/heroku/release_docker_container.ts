@@ -21,9 +21,13 @@ export const releaseDockerContainer = async ({
     console.log('Container released.');
     core.endGroup();
     return true;
-  } catch (err) {
+  } catch (err: unknown) {
     core.endGroup();
-    core.setFailed(`Releasing docker container failed.\nError: ${err.message}`);
+    if (err instanceof Error) {
+      core.setFailed(`Releasing docker container failed.\nError: ${err.message}`);
+    } else {
+      core.setFailed(`Releasing docker container failed.\nError: ${String(err)}`);
+    }
     return false;
   }
 };
