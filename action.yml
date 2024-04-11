@@ -1,6 +1,6 @@
-name: 'Build, Push and Release a Docker container to Heroku with Node 20.12.1.'
+name: 'Build, Push and Release a Docker container to Heroku with Node 20.'
 author: 'Daniel Dennerkrans (and Kamil Klyta)'
-description: 'Build, Push and Release a Docker container to Herokuwith Node 20.12.1.'
+description: 'Build, Push and Release a Docker container to Heroku with Node 20.'
 inputs:
   heroku_app_name:
     description: 'Name of the heroku application to which the build is to be sent.'
@@ -31,5 +31,5 @@ branding:
   icon: server
   color: purple
 runs:
-  using: 'node:20.12.1-buster-slim'
+  using: 'node20'
   main: 'dist/index.js'

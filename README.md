@@ -1,6 +1,6 @@
 # Heroku Docker Deploy - GitHub Action
 
-Build, Push and Release a Docker container to Heroku with Node 20.12.1 🚀.
+Build, Push and Release a Docker container to Heroku with Node 20 🚀.
 
 ## Getting started
 
@@ -27,7 +27,7 @@ jobs:
       ### ⬇ IMPORTANT PART ⬇ ###
 
       - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
-        uses: dennerkrans/heroku-docker-deploy@v1.4.1 # GitHub action name (leave it as it is).
+        uses: dennerkrans/heroku-docker-deploy@v1.4.2 # GitHub action name (leave it as it is).
         with:
           # Below you must provide variables for your Heroku app.
 
